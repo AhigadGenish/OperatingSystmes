@@ -233,7 +233,7 @@ namespace ProducerConsumer
             screenThread.Start();
 
             // join for all threads
-            Thread.CurrentThread.Join(5000);
+            screenThread.Join();
             Console.WriteLine("end");
             return;
 
