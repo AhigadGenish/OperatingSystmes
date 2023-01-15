@@ -24,7 +24,7 @@ namespace ProducerConsumer
         // global size of the bounded queue ;
         public const int N = 10;
         static int countDone = 0;
-        // shared memory - array of prucers where any producers has own bounded queue and num of news.
+        // shared memory - array of producers where any producers has own bounded queue and num of news.
         //               - coEditorNews array (unbounded queue).
         //               - coEditorSports array (unbounded queue).
         //               - coEditorWeathers array (unbounded queue).
@@ -232,9 +232,9 @@ namespace ProducerConsumer
             Thread screenThread = new Thread(ScreenManager);
             screenThread.Start();
 
-            // join for all threads
+            // join for all threads , if screen manager done, finish.
             screenThread.Join();
-            Console.WriteLine("end");
+            Console.WriteLine("End of news for today");
             return;
 
         }
